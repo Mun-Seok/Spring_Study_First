@@ -10,7 +10,6 @@ public class MemoryMemberRepository implements MemberRepository {
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;
 
-
     @Override
     public Member save(Member member) {
         member.setId(++sequence);
@@ -26,8 +25,8 @@ public class MemoryMemberRepository implements MemberRepository {
     @Override
     public Optional<Member> findByName(String name) {
         return store.values().stream()
-                .filter(member -> member.getName().equals(name))
-                .findAny();
+                .filter(member -> member.getName().equals(name)) // 같은 이름인지 확인
+                .findAny(); // 하나 찾으면 반환 / 없으면 null 반환
     }
 
     @Override
