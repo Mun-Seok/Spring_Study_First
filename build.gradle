@@ -12,13 +12,15 @@ java {
 }
 
 repositories {
-	mavenCentral()
+	mavenCentral() // 라이브러리들을 mavenCentral 사이트에서 다운
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // Thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-web'		// Spring Web
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'// test
 }
 
 tasks.named('test') {
