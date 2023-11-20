@@ -21,9 +21,9 @@ public class HelloController {
     }
 
     @GetMapping("hello-string")
-    @ResponseBody                   // body에 데이터를 직접 넣어주겠다
+    @ResponseBody                   // body에 데이터를 직접 넣어주겠다.
     public String helloString(@RequestParam("name") String name) {
-        return "hello " + name;
+        return "hello " + name; // name을 spring이라고 하면 문자 그대로 spring을 넘겨줌
     }
 
     @GetMapping("hello-api")
@@ -32,6 +32,7 @@ public class HelloController {
         Hello hello = new Hello();
         hello.setName(name);
         return hello;
+        // JSON 방식
         // 객체를 전달 → HttpMessageConverter가 동작 (객체면 JsonConverter / 문자면 StringConverter가 동작하며 변환하여 서버에 보내줌)
     }
 
