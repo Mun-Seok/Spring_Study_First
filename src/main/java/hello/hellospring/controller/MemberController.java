@@ -14,8 +14,10 @@ import java.util.List;
 public class MemberController {
 
     private final MemberService memberService;
+//    private final MemberService memberService = new MemberService(); // 다른 컨트롤러에서도 사용할 수 있어 문제가 됨
 
-    @Autowired // 의존관계 주입
+    // 스프링 컨테이너에 등록해 쓰기
+    @Autowired // 의존관계 주입 (Dependency Injection)
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
     }

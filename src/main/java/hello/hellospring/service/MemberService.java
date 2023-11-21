@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 import java.util.List;
 
+@Service // Service라고 스프링에 등록
 public class MemberService {
 
 //    private final MemberRepository memberRepository = new MemberRepository();
@@ -16,6 +17,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     // 외부에서 멤버 리포지토리를 넣어줌 -> Dependency Injection(D.I)
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
