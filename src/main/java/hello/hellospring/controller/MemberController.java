@@ -33,19 +33,21 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    @GetMapping("/members/new")
+    // 회원가입 페이지로 이동
+    @GetMapping("/members/new") // Get 조회할 때 주로 쓰임
     public String crateForm(){
         return "members/createMemberForm";
     }
 
-    @PostMapping("members/new")
+    // 회원 등록해주기
+    @PostMapping("members/new") // Post 등록할 때 주로 쓰임
     public String create(MemberForm form) {
         Member member = new Member();
         member.setName(form.getName());
 
         memberService.join(member);
 
-        return "redirect:/";
+        return "redirect:/"; // 홈화면으로 보냄
     }
 
     @GetMapping("/members")
