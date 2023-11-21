@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringConfig {
 
-    @Bean
+    @Bean // Spring Bean 등록
     public MemberService memberService(){
         return new MemberService(memberRepository());
     }

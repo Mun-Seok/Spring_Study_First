@@ -14,10 +14,21 @@ import java.util.List;
 public class MemberController {
 
     private final MemberService memberService;
+
 //    private final MemberService memberService = new MemberService(); // 다른 컨트롤러에서도 사용할 수 있어 문제가 됨
 
+//    @Autowired private final MemberService memberService; // 의존관계 주입 (Dependency Injection) - 필드주입 (사용 X)
+
+    /*
+    // 의존관계 주입 (Dependency Injection) - setter 주입
+    @Autowired
+    void setMemberService(MemberService memberService){
+        this.memberService = memberService;
+    }
+    */
+
     // 스프링 컨테이너에 등록해 쓰기
-    @Autowired // 의존관계 주입 (Dependency Injection)
+    @Autowired // 의존관계 주입 (Dependency Injection) - 생성자 주입 (생성되는 시점에 한번 생성되고 끝나 좋음)
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
     }

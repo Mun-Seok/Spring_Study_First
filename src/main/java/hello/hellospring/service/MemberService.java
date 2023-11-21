@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 import java.util.List;
 
-@Service // Service라고 스프링에 등록
+//@Service // Service라고 스프링에 등록
 public class MemberService {
 
 //    private final MemberRepository memberRepository = new MemberRepository();
