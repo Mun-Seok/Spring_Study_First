@@ -18,8 +18,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // Thymeleaf
 	implementation 'org.springframework.boot:spring-boot-starter-web'		// Spring Web
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	runtimeOnly 'com.h2database:h2'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'		// jdbc
+	runtimeOnly 'com.h2database:h2'											// h2
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'// test
 }
 
